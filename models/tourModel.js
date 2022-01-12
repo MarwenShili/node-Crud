@@ -40,6 +40,8 @@ const tourSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
+    //we cannot get the images => password for exemple
+    select: false,
   },
   startDates: [Date],
 });

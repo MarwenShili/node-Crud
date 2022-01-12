@@ -12,14 +12,14 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json());
 
-// app.use((req, res, next) => {
-//   console.log('hello from the middleware');
-//   next();
-// });
-// app.use((req, res, next) => {
-//   req.requestTime = new Date();
-//   next();
-// });
+app.use((req, res, next) => {
+  console.log('hello from the middleware');
+  next();
+});
+app.use((req, res, next) => {
+  req.requestTime = new Date();
+  next();
+});
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
